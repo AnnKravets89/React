@@ -6,12 +6,12 @@ function App() {
   return (
     <>
 
-        <MyComponent text={'Hello Ann!'} />
-        <MyComponent text={'Hello Okten!'} />
-        <MyComponent text={'Hello World!'} />
-        <MyComponent text={'Have a nice day, Ann!'} />
-        {/*{MyComponent({text: 'Hello Ann'})}*/}
-
+        <MyComponent title={'Hello Ann!'}>
+            Lorem ipsum dolor sit amet.
+        </MyComponent>
+        <MyComponent title={'Hello Okten!'} />
+        <MyComponent title={'Hello World!'} />
+        <MyComponent title={'Have a nice day, Ann!'} />
     </>
   )
 }
