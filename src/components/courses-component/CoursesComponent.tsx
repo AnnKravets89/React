@@ -1,5 +1,5 @@
 import './CoursesComponent.css';
-import {coursesAndDurationArray} from "../../arrays.ts";
+import {coursesAndDurationArray} from "../../data/arrays.ts";
 import type {CourseModel} from "../../models/CourseModel.ts";
 import {CourseComponent} from "../course-component/CourseComponent.tsx";
 
