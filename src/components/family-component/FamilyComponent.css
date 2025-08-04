@@ -1,11 +1,9 @@
 .family {
-    width: 100%;
-    background-image: url("/public/image/sky-with-clouds.jpg");
-    background-size: cover;
-    background-position: center;
+    width: 70%;
+    padding: 20px 0 10px 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }

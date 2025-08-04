@@ -1,8 +1,10 @@
 .character-card {
-    width: 80%;
-    margin: 50px auto 20px auto;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
+}
+.character-image {
+    width: 350px;
 }
 .character-name-info {
     width: 50%;
