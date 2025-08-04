@@ -1,9 +1,10 @@
-import {CoursesComponent} from "./components/courses-component/CoursesComponent.tsx";
+import {FamilyComponent} from "./components/family-component/FamilyComponent.tsx";
+
 
 export const App =() => {
   return (
     <>
-      <CoursesComponent/>
+        <FamilyComponent/>
     </>
   );
 };
