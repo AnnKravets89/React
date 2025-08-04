@@ -1,11 +1,12 @@
-import {FamilyComponent} from "./components/family-component/FamilyComponent.tsx";
+import './App.css';
+import {CoursesComponent} from "./components/courses-component/CoursesComponent.tsx";
 
 
 export const App =() => {
   return (
-    <>
-        <FamilyComponent/>
-    </>
+    <div className={"main-container"}>
+        <CoursesComponent/>
+    </div>
   );
 };
 
