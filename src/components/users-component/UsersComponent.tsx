@@ -5,6 +5,7 @@ import {getUsers} from "../../services/api.service.ts";
 
 export const UsersComponent = () => {
     const [users, setUsers] = useState<IUser[]>([]);
+    const [item, setItem] = useState<IUser | null>(null);
     useEffect(() => {
         const fetchData = async () => {
             const users = await getUsers();
@@ -20,10 +21,17 @@ export const UsersComponent = () => {
             console.log('done');
         }
     }, []);
+
+    const foo = (item: IUser) => {
+        setItem(item);
+    }
     return (
         <>
             {
-                users.map(user => <UserComponent key={user.id} item={user} />)
+                item && <div>{JSON.stringify(item)}</div>
+            }
+            {
+                users.map(user => <UserComponent foo={foo} key={user.id} item={user} />)
             }
         </>
     );
