@@ -1,11 +1,11 @@
 import './App.css';
-import {Posts} from "./componets/posts-component/Posts.tsx";
+import {Comments} from "./componets/comments-component/Comments.tsx";
 
 function App() {
 
   return (
     <>
-        <Posts/>
+      <Comments/>
     </>
   )
 }

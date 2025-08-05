@@ -1,6 +1,6 @@
-import type {IPost} from "../models/IPost.ts";
+import type {IComment} from "../models/IComment.ts";
 
-export const loadPosts = async (): Promise<IPost[]> => {
+export const loadComments = async (): Promise<IComment[]> => {
         return await fetch(import.meta.env.VITE_API_URL)
-            .then(value => value.json());
+                .then(value => value.json());
 }
