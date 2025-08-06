@@ -1,0 +1,11 @@
+.comment {
+    padding: 1em;
+    background: aliceblue;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
