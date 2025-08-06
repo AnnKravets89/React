@@ -1,0 +1,11 @@
+.post {
+    padding: 10px;
+    background: rgba(30, 144, 255, 0.45);
+    border-radius: 10px;
+}
+h2::first-letter {
+    text-transform: capitalize;
+}
+.post-body::first-letter {
+    text-transform: capitalize;
+}

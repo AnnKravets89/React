@@ -1,0 +1,6 @@
+.posts {
+    width: 100%;
+    padding: 30px 100px;
+    background-image: url("public/image/background-sky.jpg");
+    background-size: cover;
+}
