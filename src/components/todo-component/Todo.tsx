@@ -10,7 +10,7 @@ export const Todo: FC<PropsTodoType> = ({todo}) => {
             <div className={"flex todo"}>
                 <ol>
                     <li>
-                        {todo.id}{'.'} {todo.title}
+                        {todo.id}{'.'} {todo.todo}
                     </li>
                 </ol>
                 <ul>

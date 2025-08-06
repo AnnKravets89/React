@@ -7,13 +7,19 @@ import {Todo} from "../todo-component/Todo.tsx";
 export const Todos = () => {
     const [todos, setTodos] = useState<ITodoModel[]>([]);
     useEffect(() => {
-        loadTodos().then(value => setTodos(value));
+
+        async function fetchTodos() {
+            const allTodos = await loadTodos();
+            setTodos(allTodos);
+        }
+        fetchTodos();
+
     }, []);
 
     return (
-        <div>
+        <div className={"todos flex flex-col gap-4"}>
             {
-                todos.map(todo => <Todo key={todo.id} todo={todo}/>)
+                todos.map((todo) =>( <Todo key={todo.id} todo={todo}/>))
             }
         </div>
     );
