@@ -1,14 +1,12 @@
-import {useLocation} from "react-router-dom";
-import type {IUser} from "../models/UserModel.ts";
+import {SingleUserDetails} from "../components/single-user-details/SingleUserDetails.tsx";
 
 const SingleUserDetailsPage = () => {
-    const {state} = useLocation();
-    const user = state as IUser;
+
 
 
     return (
         <div>
-            {user.email}
+            <SingleUserDetails/>
         </div>
     );
 };
