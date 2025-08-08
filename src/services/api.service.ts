@@ -1,5 +1,5 @@
-import {IUser} from "../model/IUser.ts";
 import {urls} from "../constants/urls.ts";
+import type {IUser} from "../models/UserModel.ts";
 
 
 export const userService = {

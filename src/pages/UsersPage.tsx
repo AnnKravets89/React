@@ -1,9 +1,10 @@
-import UsersComponent from "../components/users/UsersComponent.tsx";
+import {Users} from "../components/users/Users.tsx";
+
 
 const UsersPage = () => {
     return (
         <div>
-            <UsersComponent/>
+            <Users/>
         </div>
     );
 };
