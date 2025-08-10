@@ -1,7 +1,7 @@
 import type {IUserDummy} from "./UserDummyModel.ts";
 
 export interface IUserDummyResponse {
-    usersDummy: IUserDummy[],
+    users: IUserDummy[]
     total: number,
     skip: number,
     limit: number

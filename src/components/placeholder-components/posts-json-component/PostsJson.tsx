@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import type {IPostJson} from "../../../models/PostJsonModel.ts";
-import {postsJsonService} from "../../../services/api.service.ts";
+import {postsJsonService} from "../../../services/json.api.service.ts";
 import PostJson from "../post-json-component/PostJson.tsx";
 
 const PostsJson = () => {

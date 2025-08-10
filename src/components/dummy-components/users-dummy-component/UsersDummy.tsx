@@ -1,25 +1,23 @@
-import {useEffect, useState} from "react";
-import type {IUserDummy} from "../../../models/users-dummy-models/UserDummyModel.ts";
-import {getUsersDummy} from "../../../services/api.service.ts";
+import {useEffect, useState} from "react";import type {IUserDummy} from "../../../models/users-dummy-models/UserDummyModel.ts";
 import UserDummy from "../user-dummy-component/UserDummy.tsx";
-
+import {userService} from "../../../services/dummy.api.service.ts";
+import type {IUserDummyResponse} from "../../../models/users-dummy-models/UserDummyResponse.ts";
 
 const UsersDummy = () => {
     const [usersDummy, setUsersDummy] = useState<IUserDummy[]>([]);
 
     useEffect(() => {
 
-        async function fetchUsersDummy () {
-            const allUsersDummy = await  getUsersDummy();
-            setUsersDummy(allUsersDummy);
-        }
-        fetchUsersDummy();
-
+        userService.getUsersDummy()
+            .then(({users}: IUserDummyResponse) => {
+                setUsersDummy(users);
+            })
     }, []);
+
     return (
         <div>
             {
-                usersDummy.map((userDummy) => (<UserDummy key={userDummy.id} userDummy={userDummy}/>))
+               usersDummy.map((userDummy: IUserDummy) => <UserDummy key={userDummy.id} userDummy={userDummy}/>)
             }
         </div>
     );

@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import type {IUserJson} from "../../../models/users-json-models/UserJsonModel.ts";
-import {usersJsonService} from "../../../services/api.service.ts";
+import {usersJsonService} from "../../../services/json.api.service.ts";
 import UserJson from "../user-json-component/UserJson.tsx";
 
 const UsersJson = () => {
