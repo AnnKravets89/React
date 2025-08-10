@@ -1,3 +1,5 @@
+
+
 const baseUrlJson = 'https://jsonplaceholder.typicode.com';
 const baseUrlDummy = 'https://dummyjson.com';
 
@@ -13,6 +15,6 @@ export const urls = {
     },
     usersDummy: {
         allUsersDummy: baseUrlDummy + '/users',
-    },
+    }
 
 }

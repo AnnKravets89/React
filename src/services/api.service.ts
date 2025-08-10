@@ -1,7 +1,9 @@
 import type {IUserJson} from "../models/users-json-models/UserJsonModel.ts";
 import {urls} from "../constants/urls.ts";
 import type {IPostJson} from "../models/PostJsonModel.ts";
-import type {ICommentJson} from "../models/CommentJsonModel.tsx";
+import type {ICommentJson} from "../models/CommentJsonModel.ts";
+import type {IUserDummy} from "../models/users-dummy-models/UserDummyModel.ts";
+import type {IUserDummyResponse} from "../models/users-dummy-models/UserDummyResponse.ts";
 
 export const usersJsonService = {
     getUsersJson: async (): Promise<IUserJson[]> => {
@@ -24,6 +26,8 @@ export const commentsJsonService = {
     }
 }
 
-export const usersDummyService = {
-    getUsersDummy: async (): Promise<>
+export const getUsersDummy = async (): Promise<IUserDummy[]> => {
+    const usersDummyResponse: IUserDummyResponse = await fetch(urls.usersDummy.allUsersDummy)
+    .then(value => value.json());
+    return usersDummyResponse.usersDummy;
 }

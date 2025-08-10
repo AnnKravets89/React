@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import type {ICommentJson} from "../../../models/CommentJsonModel.tsx";
+import type {ICommentJson} from "../../../models/CommentJsonModel.ts";
 import {commentsJsonService} from "../../../services/api.service.ts";
 import CommentJson from "../comment-json-component/CommentJson.tsx";
 

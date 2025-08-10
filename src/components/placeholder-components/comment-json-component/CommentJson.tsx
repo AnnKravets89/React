@@ -1,4 +1,4 @@
-import type {ICommentJson} from "../../../models/CommentJsonModel.tsx";
+import type {ICommentJson} from "../../../models/CommentJsonModel.ts";
 import type {FC} from "react";
 
 type PropsCommentJsonType = {
