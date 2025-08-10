@@ -13,7 +13,7 @@ const UsersJson = () => {
     }, []);
 
     return (
-        <div className={'grid grid-cols-4 gap-4 m-[20px]'}>
+        <div className={'grid grid-cols-4 gap-4 m-[20px] ml-[50px]'}>
             {
                 usersJson.map((userJson) => (<UserJson key={userJson.id} userJson={userJson}/>))
             }

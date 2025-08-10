@@ -1,6 +1,7 @@
 import type {IUserJson} from "../models/users-json-models/UserJsonModel.ts";
 import {urls} from "../constants/urls.ts";
-import type {IPostsJson} from "../models/PostJsonModel.ts";
+import type {IPostJson} from "../models/PostJsonModel.ts";
+import type {ICommentJson} from "../models/CommentJsonModel.tsx";
 
 export const usersJsonService = {
     getUsersJson: async (): Promise<IUserJson[]> => {
@@ -10,8 +11,19 @@ export const usersJsonService = {
 }
 
 export const postsJsonService = {
-    getPostsJson: async (): Promise<IPostsJson[]> => {
+    getPostsJson: async (): Promise<IPostJson[]> => {
         return await fetch(urls.postsJson.allPostsJson)
             .then(value => value.json());
     }
+}
+
+export const commentsJsonService = {
+    getCommentsJson: async (): Promise<ICommentJson[]> => {
+        return await fetch(urls.commentsJson.allCommentsJson)
+            .then(value => value.json());
+    }
+}
+
+export const usersDummyService = {
+    getUsersDummy: async (): Promise<>
 }

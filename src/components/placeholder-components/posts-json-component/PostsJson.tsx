@@ -14,7 +14,7 @@ const PostsJson = () => {
     }, []);
 
     return (
-        <div className={'grid grid-cols-4 gap-4 m-[20px]'}>
+        <div className={'grid grid-cols-4 gap-4 m-[20px] ml-[50px]'}>
             {
                 postsJson.map((postJson) => (<PostJson key={postJson.id} postJson={postJson}/>))
             }
