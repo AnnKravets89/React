@@ -1,17 +1,19 @@
 import {createBrowserRouter} from "react-router-dom";
 import Layout from "../layouts/Layout.tsx";
-import PostsPage from "../pages/PostsPage.tsx";
+import PostsJsonPage from "../pages/PostsJsonPage.tsx";
 import HomePage from "../pages/HomePage.tsx";
-import UsersPage from "../pages/UsersPage.tsx";
-import CommentsPage from "../pages/CommentsPage.tsx";
-import ProductsPage from "../pages/ProductsPage.tsx";
+import UsersJsonPage from "../pages/UsersJsonPage.tsx";
+import CommentsJsonPage from "../pages/CommentsJsonPage.tsx";
+import UsersDummyPage from "../pages/UsersDummyPage.tsx";
+import PostsDummyPage from "../pages/PostsDummyPage.tsx";
 
 export const routes = createBrowserRouter([
     {path: '', element: <Layout/>, children: [
             {index: true, element: <HomePage/>},
-            {path: 'users', element:<UsersPage/>},
-            {path: 'posts', element:<PostsPage/>},
-            {path: 'comments', element:<CommentsPage/>},
-            {path: 'products', element:<ProductsPage/>},
+            {path: 'users/jsonplaceholder', element:<UsersJsonPage/>},
+            {path: 'posts/jsonplaceholder', element:<PostsJsonPage/>},
+            {path: 'comments/jsonplaceholder', element:<CommentsJsonPage/>},
+            {path: 'users/dummyjson', element:<UsersDummyPage/>},
+            {path: 'posts/dummyjson', element:<PostsDummyPage/>},
         ]}
 ])
