@@ -15,7 +15,7 @@ const UsersDummy = () => {
     }, []);
 
     return (
-        <div>
+        <div className={'w-full flex flex-col justify-evenly items-center'}>
             {
                usersDummy.map((userDummy: IUserDummy) => <UserDummy key={userDummy.id} userDummy={userDummy}/>)
             }

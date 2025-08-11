@@ -6,13 +6,13 @@ type PropsUserDummyType = {
 }
 const UserDummy: FC<PropsUserDummyType> = ({userDummy}) => {
     return (
-        <div>
-            <div>
+        <div className={'flex flex-col gap-10 w-[80%] p-[50px]'}>
+            <div className={'flex justify-between'}>
                 <div>
                     <img src={userDummy.image} alt={userDummy.firstName}/>
                 </div>
-                <div>
-                    <p>{userDummy.id}</p>
+                <div className={'flex gap-3'}>
+                    <p>{userDummy.id}{'.'}</p>
                     <h2>{userDummy.firstName} {userDummy.lastName} {userDummy.maidenName}</h2>
                 </div>
                 <div>
@@ -20,28 +20,27 @@ const UserDummy: FC<PropsUserDummyType> = ({userDummy}) => {
                     <p>{userDummy.birthDate}</p>
                     <p>{userDummy.gender}</p>
                 </div>
+                <div>
+                    <p>{userDummy.email}</p>
+                    <p>{userDummy.phone}</p>
+                    <p>{userDummy.username}</p>
+                    <p>{userDummy.password}</p>
+                </div>
+                <div className={'flex gap-6'}>
+                    <div>
+                        <p>{userDummy.bloodGroup}</p>
+                        <p>{userDummy.height}</p>
+                        <p>{userDummy.weight}</p>
+                    </div>
+                    <div>
+                        <p>{userDummy.eyeColor}</p>
+                        <p>{userDummy.hair.color}</p>
+                        <p>{userDummy.hair.type}</p>
+                    </div>
+                </div>
             </div>
 
-            <div>
-                <p>{userDummy.email}</p>
-                <p>{userDummy.phone}</p>
-                <p>{userDummy.username}</p>
-                <p>{userDummy.password}</p>
-            </div>
-            <div>
-                <div>
-                    <p>{userDummy.bloodGroup}</p>
-                    <p>{userDummy.height}</p>
-                    <p>{userDummy.weight}</p>
-                </div>
-                <div>
-                    <p>{userDummy.eyeColor}</p>
-                    <p>{userDummy.hair.color}</p>
-                    <p>{userDummy.hair.type}</p>
-                </div>
-            </div>
-
-            <div>
+            <div className={'flex justify-between'}>
                 <div>
                     <p>{userDummy.ip}</p>
                     <p>{userDummy.macAddress}</p>
@@ -63,7 +62,7 @@ const UserDummy: FC<PropsUserDummyType> = ({userDummy}) => {
                 </div>
             </div>
 
-            <div>
+            <div className={'flex justify-between'}>
                 <div>
                     <p>{userDummy.bank.cardExpire}</p>
                     <p>{userDummy.bank.cardNumber}</p>
