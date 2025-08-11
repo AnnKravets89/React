@@ -16,7 +16,7 @@ const Users = () => {
     }, []);
 
     return (
-        <div className={'flex flex-col gap-3 ml-[20px]'}>
+        <div className={'flex flex-col gap-5 ml-[20px] mt-[20px]'}>
             {
                 users.map(user => <User key={user.id} user={user}/>)
             }
