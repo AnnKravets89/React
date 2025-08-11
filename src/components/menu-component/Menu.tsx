@@ -11,6 +11,7 @@ const Menu = () => {
                 <li><Link to={'comments/jsonplaceholder'}>Comments Json</Link></li>
                 <li><Link to={'users/dummyjson'}>Users Dummy</Link></li>
                 <li><Link to={'posts/dummyjson'}>Posts Dummy</Link></li>
+                <li><Link to={'comments/dummyjson'}>Comments Dummy</Link></li>
             </ul>
         </div>
     );

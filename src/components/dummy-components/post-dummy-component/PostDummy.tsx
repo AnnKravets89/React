@@ -1,4 +1,4 @@
-import type {IPostDummy} from "../../models/posts-dummy-models/PostDummyModel.ts";
+import type {IPostDummy} from "../../../models/posts-dummy-models/PostDummyModel.ts";
 import type {FC} from "react";
 
 type PropsPostDummyType = {

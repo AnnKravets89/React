@@ -6,6 +6,7 @@ import UsersJsonPage from "../pages/UsersJsonPage.tsx";
 import CommentsJsonPage from "../pages/CommentsJsonPage.tsx";
 import UsersDummyPage from "../pages/UsersDummyPage.tsx";
 import PostsDummyPage from "../pages/PostsDummyPage.tsx";
+import CommentsDummyPage from "../pages/CommentsDummyPage.tsx";
 
 export const routes = createBrowserRouter([
     {path: '', element: <Layout/>, children: [
@@ -15,5 +16,6 @@ export const routes = createBrowserRouter([
             {path: 'comments/jsonplaceholder', element:<CommentsJsonPage/>},
             {path: 'users/dummyjson', element:<UsersDummyPage/>},
             {path: 'posts/dummyjson', element:<PostsDummyPage/>},
+            {path: 'comments/dummyjson', element:<CommentsDummyPage/>},
         ]}
 ])
