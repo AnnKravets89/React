@@ -1,17 +1,16 @@
 import {useSearchParams} from "react-router-dom";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
+import type {IUser} from "../../models/UserModel.ts";
+import {getUsers} from "../../service/api.service.ts";
 
 const Some = () => {
 
-    const [query, setQuery] = useSearchParams();
+    const [users, setUsers] = useState<IUser[]>([]);
+    const [query] = useSearchParams();
     useEffect(() => {
 
         const pg = query.get('pg');
-        fetch('https://reqres.in/api/users?page=' + pg)
-            .then(value => value.json())
-            .then(value => {
-                console.log(value);
-            })
+        getUsers(pg || '1').then(value => console.log(value));
     }, [query]);
     return (
         <div>
