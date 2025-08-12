@@ -1,8 +1,16 @@
+import type {IPageResponse} from "../models/PageResponseModel.ts";
 
 
-export const getUsers = async (pg:string) => {
-    return await fetch('https://reqres.in/api/users?page=' + pg)
-        .then(res => res.json())
+export const getUsers = async (pg:string): Promise<IPageResponse> => {
+    return await fetch('https://reqres.in/api/users?page=' + pg, {
+        headers: {
+            'x-api-key': 'reqres-free-v1'
+        }
+    })
+        .then(value => value.json())
 
 
 }
+
+
+

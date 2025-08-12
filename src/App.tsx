@@ -1,12 +1,11 @@
 import Pagination from "./components/pagination/Pagination.tsx";
-import Some from "./components/some-component/Some.tsx";
+import Users from "./components/users-component/Users.tsx";
 
 function App() {
 
   return (
     <>
-        <Some/>
-        hello
+        <Users/>
         <Pagination/>
 
     </>
