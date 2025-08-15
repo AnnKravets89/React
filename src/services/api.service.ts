@@ -1,0 +1,13 @@
+import  axios from "axios";
+import type {ICar} from "../models/CarModel.ts";
+
+const axiosInstance = axios.create({
+    baseURL: 'http://owu.linkpc.net/carsAPI/v1',
+    headers: {'Content-Type': 'application/json'}
+})
+
+export const getCars = async (): Promise<ICar[]> => {
+    const axiosResponse = await axiosInstance.get<ICar[]>('/cars');
+    const cars = axiosResponse.data;
+    return cars;
+}
