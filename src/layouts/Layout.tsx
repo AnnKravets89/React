@@ -1,10 +1,11 @@
-import Cars from "../components/cars-component/Cars.tsx";
 import {Outlet} from "react-router-dom";
+import Menu from "../components/menu-component/Menu.tsx";
 
 const Layout = () => {
     return (
         <div>
-            <Cars/>
+            <Menu/>
+            <hr/>
             <Outlet/>
         </div>
     );
