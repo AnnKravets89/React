@@ -1,9 +1,14 @@
 import User from "../user-component/User.tsx";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useMemo, useState} from "react";
 
 const Users = () => {
     console.log('users');
     const [users, setUsers] = useState([]);
+
+    const arr: number[] = useMemo(() => {
+        return [11, 22, 33];
+
+    }, []);
 
     const foo = useCallback(() => {
         console.log('test');
@@ -24,7 +29,7 @@ const Users = () => {
     return (
         <div>
             users component
-            <User foo={foo}/>
+            <User foo={foo} arr={arr}/>
         </div>
     );
 };
