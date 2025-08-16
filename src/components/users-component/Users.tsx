@@ -1,9 +1,11 @@
 import User from "../user-component/User.tsx";
-import {useCallback, useEffect, useMemo, useState} from "react";
+import {useCallback, useMemo} from "react";
+import {useFetch} from "../../hooks/useFetch.tsx";
 
 const Users = () => {
     console.log('users');
-    const [users, setUsers] = useState([]);
+
+    const users = useFetch();
 
     const arr: number[] = useMemo(() => {
         return [11, 22, 33];
@@ -14,22 +16,13 @@ const Users = () => {
         console.log('test');
     }, []); // кешувати пропси або об'єкти
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(value => value.json())
-            .then(value => {
-                setUsers(value)
-            })
-        return () => {
-            console.log('unsubscribe');
-        }
-
-    }, []);
 
     return (
         <div>
             users component
-            <User foo={foo} arr={arr}/>
+            {
+                users.map(user => (<User foo={foo} arr={arr} user={user}/>))
+            }
         </div>
     );
 };
