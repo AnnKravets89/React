@@ -5,4 +5,4 @@ export const retriveLocalStorage = <T, > (key: string) => {
     }
     const parse = JSON.parse(object);
     return parse as T;
-}
+} // дістає токен з localStorage

@@ -17,15 +17,19 @@ axiosInstance.interceptors.request.use((requestObject) => {
     }
 
     return requestObject;
-})
+}) // перехватує запит щоб дістати потрібний токен
 
 export const login = async ({username, password, expiresInMins}: ILoginData): Promise<IUserWithTokens> => {
     const {data: userWithTokens} = await axiosInstance.post<IUserWithTokens>('/login', {username, password, expiresInMins});
     console.log(userWithTokens);
     localStorage.setItem('user', JSON.stringify(userWithTokens));
     return userWithTokens;
-}
+} // логінить юзера
 
+export const loadAuthProducts = async (): Promise<IProduct[]> => {
+    const {data} = await axiosInstance.get<ProductsResponseType>('/products');
+    return data.products;
+} // запит на ресурс з продуктами
 
 export const refresh = async () => {
     const iUserWithTokens = retriveLocalStorage<IUserWithTokens>('user');
@@ -40,8 +44,5 @@ export const refresh = async () => {
     iUserWithTokens.refreshToken = refreshToken;
     localStorage.setItem('user', JSON.stringify(iUserWithTokens));
 
-}
-export const loadAuthProducts = async (): Promise<IProduct[]> => {
-    const {data} = await axiosInstance.get<ProductsResponseType>('/products');
-        return data.products;
-    }
+} // якщо дія токена закінченна - робимо запит на його відновлення
+
