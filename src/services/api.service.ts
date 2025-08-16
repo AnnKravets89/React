@@ -1,25 +1,22 @@
 import  axios from "axios";
 import type {ILoginData} from "../models/LoginData.ts";
 import type {IUserWithTokens} from "../models/IUserWithTokens.ts";
+import {retriveLocalStorage} from "./helpers.ts";
+import type {ITokenPair} from "../models/ITokenPair.ts";
+import type {ProductsResponseType} from "../models/product-model/IProductsResponse.ts";
 import type {IProduct} from "../models/product-model/IProduct.ts";
-import type {IProductResponse} from "../models/product-model/IProductResponse.ts";
 
 const axiosInstance = axios.create({
     baseURL: "https://dummyjson.com/auth",
     headers: {}
 });
 
-const retriveLocalStorage = <T,> () => {
-
-}
-
-
 axiosInstance.interceptors.request.use((requestObject) => {
-    if (requestObject.method?.toUpperCase() === 'Get') {
-        requestObject.headers.Authorization = 'Bearer' + JSON.parse(localStorage.getItem('user'))
+    if (requestObject.method?.toUpperCase() === 'GET') {
+        requestObject.headers.Authorization = 'Bearer ' + retriveLocalStorage<IUserWithTokens>('user').accessToken;
     }
 
-    return value;
+    return requestObject;
 })
 
 export const login = async ({username, password, expiresInMins}: ILoginData): Promise<IUserWithTokens> => {
@@ -29,7 +26,22 @@ export const login = async ({username, password, expiresInMins}: ILoginData): Pr
     return userWithTokens;
 }
 
-export const loadAuthProducts = async (): Promise<IProduct[]> => {
-    const {data: {products}} = await axiosInstance.get<IProductResponse>('/products');
-    return products;
+
+export const refresh = async () => {
+    const iUserWithTokens = retriveLocalStorage<IUserWithTokens>('user');
+    const {data: {refreshToken, accessToken}} = await axiosInstance.post<ITokenPair>('/refresh', {
+        refreshToken: iUserWithTokens.refreshToken,
+        expiresInMin: 1
+    });
+    console.log(refreshToken);
+    console.log(accessToken);
+
+    iUserWithTokens.accessToken = accessToken;
+    iUserWithTokens.refreshToken = refreshToken;
+    localStorage.setItem('user', JSON.stringify(iUserWithTokens));
+
 }
+export const loadAuthProducts = async (): Promise<IProduct[]> => {
+    const {data} = await axiosInstance.get<ProductsResponseType>('/products');
+        return data.products;
+    }
